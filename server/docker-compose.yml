@@ -18,6 +18,13 @@ services:
       PGADMIN_DEFAULT_PASSWORD: admin
     networks:
       - backend
+  api:
+    image: videocallapi
+    build: .
+    ports:
+      - 3001:3001
+    networks:
+      - backend
 networks:
   backend:
     driver: bridge
